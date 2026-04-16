@@ -13,22 +13,34 @@ Ce projet est une application web complète implémentant les opérations CRUD (
 ## 🚀 Fonctionnalités
 
 ### Opérations CRUD complètes
-- ✅ **Create** : Ajouter de nouveaux produits avec validation
-- ✅ **Read** : Visualiser la liste et les détails des produits
-- ✅ **Update** : Modifier les informations des produits existants
-- ✅ **Delete** : Supprimer des produits avec confirmation
+- **Create** : Ajouter de nouveaux produits avec validation
+-  **Read** : Visualiser la liste et les détails des produits
+-  **Update** : Modifier les informations des produits existants
+-  **Delete** : Supprimer des produits avec confirmation
 
 ### Fonctionnalités avancées
-- 🔍 Recherche par nom ou description
-- 📂 Filtrage par catégorie
-- 💰 Filtrage par plage de prix
-- 📦 Filtre "En stock" / "Rupture"
-- 📊 Pagination automatique (12 produits par page)
-- 🏷️ Tags et catégorisation des produits
-- ⭐ Système de notation (0-5 étoiles)
-- 📈 Statistiques en temps réel
-- 📱 Design responsive (mobile, tablette, desktop)
-- 🎨 Interface moderne avec animations
+-  Recherche par nom ou description
+-  Filtrage par catégorie
+-  Filtrage par plage de prix
+-  Filtre "En stock" / "Rupture"
+-  Pagination automatique (12 produits par page)
+
+Uploading video demo tp5.mp4…
+
+
+
+Uploading video demo tp5.mp4…
+
+
+
+Uploading video demo tp5.mp4…
+
+
+-  Tags et catégorisation des produits
+-  Système de notation (0-5 étoiles)
+-  Statistiques en temps réel
+-  Design responsive (mobile, tablette, desktop)
+-  Interface moderne avec animations
 
 ### API REST
 - `GET /api/products` - Récupérer tous les produits
@@ -55,7 +67,9 @@ Ce projet est une application web complète implémentant les opérations CRUD (
 ```
 
 crud-express-mongodb/
-├── 📁 config/ # Fichiers de configuration
+├── 📁
+
+ config/ # Fichiers de configuration
 │ └── database.js # Configuration base de données
 ├── 📁 controllers/ # Contrôleurs de l'application
 │ └── productController.js # Logique des produits
