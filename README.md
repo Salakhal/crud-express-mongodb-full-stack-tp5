@@ -24,18 +24,6 @@ Ce projet est une application web complète implémentant les opérations CRUD (
 -  Filtrage par plage de prix
 -  Filtre "En stock" / "Rupture"
 -  Pagination automatique (12 produits par page)
-
-Uploading video demo tp5.mp4…
-
-
-
-Uploading video demo tp5.mp4…
-
-
-
-Uploading video demo tp5.mp4…
-
-
 -  Tags et catégorisation des produits
 -  Système de notation (0-5 étoiles)
 -  Statistiques en temps réel
@@ -257,11 +245,7 @@ Les paramètres peuvent être combinés et la pagination est automatique
 
 
 
-
-
-
-
-
+https://github.com/user-attachments/assets/ff54d109-61ca-4731-ae55-85c08e970e6d
 
 
 
