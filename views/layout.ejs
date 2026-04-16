@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= title %> | ShopManager</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    * { font-family: 'Inter', sans-serif; }
+    .transition-all { transition: all 0.3s ease; }
+    .card-hover:hover { transform: translateY(-4px); box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1), 0 10px 10px -5px rgba(0,0,0,0.02); }
+  </style>
+</head>
+<body class="bg-gray-50">
+  <%- include('partials/header') %>
+  
+  <main class="container mx-auto px-4 py-8 max-w-7xl">
+    <% if (flashMessage) { %>
+      <div class="mb-6 p-4 rounded-xl <%= flashMessage.type === 'success' ? 'bg-green-50 border border-green-200 text-green-800' : 'bg-red-50 border border-red-200 text-red-800' %> flex items-center justify-between">
+        <span><%= flashMessage.text %></span>
+        <button onclick="this.parentElement.remove()" class="text-gray-400 hover:text-gray-600">✕</button>
+      </div>
+    <% } %>
+    
+    <%- body %>
+  </main>
+  
+  <%- include('partials/footer') %>
+</body>
+</html>

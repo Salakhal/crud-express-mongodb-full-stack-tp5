@@ -1,0 +1,84 @@
+<div class="max-w-3xl mx-auto">
+  <div class="mb-6">
+    <h1 class="text-3xl font-bold bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent">Modifier le produit</h1>
+    <p class="text-gray-500 mt-1">Mettez à jour les informations</p>
+  </div>
+
+  <!-- Correction : Vérifier si error existe avant de l'utiliser -->
+  <% if (typeof error !== 'undefined' && error) { %>
+    <div class="mb-6 p-4 bg-red-50 border border-red-200 text-red-700 rounded-xl">
+      <%= error %>
+    </div>
+  <% } %>
+
+  <form action="/products/<%= product._id %>/update" method="POST" class="bg-white rounded-2xl shadow-sm p-6 space-y-6">
+    <!-- Nom -->
+    <div>
+      <label class="block text-sm font-medium text-gray-700 mb-1">Nom du produit *</label>
+      <input type="text" name="name" value="<%= product.name %>" required class="w-full px-4 py-2 border border-gray-200 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent">
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <!-- Prix -->
+      <div>
+        <label class="block text-sm font-medium text-gray-700 mb-1">Prix * (€)</label>
+        <input type="number" name="price" value="<%= product.price %>" step="0.01" min="0" required class="w-full px-4 py-2 border border-gray-200 rounded-lg focus:ring-2 focus:ring-purple-500">
+      </div>
+
+      <!-- Quantité -->
+      <div>
+        <label class="block text-sm font-medium text-gray-700 mb-1">Quantité en stock</label>
+        <input type="number" name="quantity" value="<%= product.quantity %>" min="0" class="w-full px-4 py-2 border border-gray-200 rounded-lg focus:ring-2 focus:ring-purple-500">
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <!-- Catégorie -->
+      <div>
+        <label class="block text-sm font-medium text-gray-700 mb-1">Catégorie</label>
+        <select name="category" class="w-full px-4 py-2 border border-gray-200 rounded-lg focus:ring-2 focus:ring-purple-500">
+          <% const categories = ['Électronique', 'Vêtements', 'Alimentation', 'Livres', 'Maison', 'Sports', 'Autres']; %>
+          <% categories.forEach(cat => { %>
+            <option value="<%= cat %>" <%= product.category === cat ? 'selected' : '' %>><%= cat %></option>
+          <% }) %>
+        </select>
+      </div>
+
+      <!-- Note -->
+      <div>
+        <label class="block text-sm font-medium text-gray-700 mb-1">Note /5</label>
+        <input type="number" name="rating" value="<%= product.rating || 0 %>" step="0.1" min="0" max="5" class="w-full px-4 py-2 border border-gray-200 rounded-lg focus:ring-2 focus:ring-purple-500">
+      </div>
+    </div>
+
+    <!-- Description -->
+    <div>
+      <label class="block text-sm font-medium text-gray-700 mb-1">Description</label>
+      <textarea name="description" rows="4" class="w-full px-4 py-2 border border-gray-200 rounded-lg focus:ring-2 focus:ring-purple-500"><%= product.description || '' %></textarea>
+    </div>
+
+    <!-- Tags -->
+    <div>
+      <label class="block text-sm font-medium text-gray-700 mb-1">Tags (séparés par des virgules)</label>
+      <input type="text" name="tags" value="<%= product.tags ? product.tags.join(', ') : '' %>" class="w-full px-4 py-2 border border-gray-200 rounded-lg focus:ring-2 focus:ring-purple-500">
+    </div>
+
+    <!-- URL Image -->
+    <div>
+      <label class="block text-sm font-medium text-gray-700 mb-1">URL de l'image</label>
+      <input type="url" name="imageUrl" value="<%= product.imageUrl || '' %>" class="w-full px-4 py-2 border border-gray-200 rounded-lg focus:ring-2 focus:ring-purple-500">
+    </div>
+
+    <!-- En stock -->
+    <div class="flex items-center gap-3">
+      <input type="checkbox" name="inStock" value="true" <%= product.inStock ? 'checked' : '' %> class="w-5 h-5 text-purple-600 rounded border-gray-300 focus:ring-purple-500">
+      <label class="text-sm text-gray-700">Produit disponible en stock</label>
+    </div>
+
+    <!-- Actions -->
+    <div class="flex gap-3 pt-4">
+      <a href="/products/<%= product._id %>" class="flex-1 text-center px-4 py-2 border border-gray-200 rounded-lg hover:bg-gray-50 transition">Annuler</a>
+      <button type="submit" class="flex-1 px-4 py-2 bg-gradient-to-r from-purple-600 to-indigo-600 text-white rounded-lg hover:opacity-90 transition">Mettre à jour</button>
+    </div>
+  </form>
+</div>
